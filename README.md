@@ -1,7 +1,7 @@
-Monty's Neon :: Un Tema Cyberpunk para Oh My Posh
-Monty's Neon es un tema para Oh My Posh que abraza una estética de minimalismo cyberpunk. Está diseñado para sentirse como una interfaz de terminal directa, extraída de una película de ciencia ficción: funcional, directa y con un estilo inconfundible de cromo y neón.
+👾 Monty's Neon :: Un Tema Cyberpunk para Oh My Posh
+Un tema para Oh My Posh que abraza una estética de minimalismo cyberpunk. Está diseñado para sentirse como una interfaz de terminal directa, extraída de una película de ciencia ficción: funcional, directa y con un estilo inconfundible de cromo y neón.
 
-¡Importante! Reemplaza esta sección con la captura de pantalla de tu prompt (image_04b2c8.png). Es la imagen perfecta para este tema.
+¡Importante! Reemplaza la URL de la imagen de arriba con la tuya propia una vez que la subas a GitHub.
 
 ✨ Filosofía y Diseño
 "Monty's Neon" se aleja de los prompts sobrecargados y se centra en tres principios del diseño cyberpunk:
@@ -12,59 +12,131 @@ Minimalismo Funcional: Solo se muestra la información crítica para saber el co
 
 Estética Neón: Una paleta de colores de alto contraste que evoca las vallas publicitarias de neón en una noche lluviosa, sobre el azul profundo de una ciudad futurista.
 
-세그먼트 Funciones
-El tema se organiza en tres líneas simples, como una consola de datos:
+🤖 Segmentos y Funciones
+El tema se organiza en tres líneas simples, como una consola de datos, para una máxima legibilidad.
 
-Línea 1: Contexto de la Shell
+Línea
 
-셸 Shell: Muestra la versión de la shell actual (p. ej., PowerShell 7.5.2).
+Icono
 
-Línea 2: Estado de la Sesión
+Segmento
 
-⚡ Sesión: Un indicador de alerta en rojo neón que señala si se está en modo administrador.
+Descripción
 
- Usuario: Muestra tu alias en la red.
+1
 
- Ruta: Indica tu ubicación en el sistema de archivos (~ para el directorio home).
+셸
 
-♡ Estado: Un corazón púrpura que indica el estado del último comando ejecutado.
+Shell
 
-Línea 3: Línea de Comando
+Muestra la versión de la shell actual (p. ej., PowerShell 7.5.2).
 
- Hora: La hora del sistema, para una referencia temporal constante.
+2
 
-❯ Prompt: Un cursor simple y limpio que espera tu siguiente instrucción.
+⚡
 
+Sesión
+
+Indicador de alerta en rojo neón que señala si se está en modo administrador.
+
+2
+
+
+
+Usuario
+
+Muestra tu alias en la red.
+
+2
+
+
+
+Ruta
+
+Indica tu ubicación en el sistema de archivos (~ para el directorio home).
+
+2
+
+♡
+
+Estado
+
+Un corazón púrpura que indica el éxito del último comando ejecutado.
+
+3
+
+
+
+Hora
+
+La hora del sistema, para una referencia temporal constante.
+
+3
+
+❯
+
+Prompt
+
+Un cursor simple y limpio que espera tu siguiente instrucción.
+
+
+Export to Sheets
 🎨 Paleta Cyberpunk Neón
-La paleta está sacada directamente de las calles de una metrópolis ciberpunk:
+La paleta está sacada directamente de las calles de una metrópolis ciberpunk para lograr un alto contraste y una legibilidad perfecta.
 
-Rojo Neón (#f50742): Para segmentos de alerta, como un aviso de "acceso no autorizado".
+Color
 
-Púrpura/Lavanda: Para indicar estados y dar un toque de color distintivo y tecnológico.
+Uso Principal
 
-Blanco/Gris Claro: Para una máxima legibilidad del texto sobre el fondo oscuro.
+Rojo Neón (#f50742)
 
-Azul de Medianoche: El fondo de la terminal, que proporciona el contraste perfecto para que los colores neón brillen con intensidad.
+Para segmentos de alerta, como un aviso de "acceso no autorizado".
 
+Púrpura/Lavanda
+
+Para indicar estados y dar un toque de color distintivo y tecnológico.
+
+Blanco/Gris Claro
+
+Para una máxima legibilidad del texto sobre el fondo oscuro.
+
+Azul de Medianoche
+
+El fondo de la terminal, que proporciona el contraste perfecto.
+
+
+Export to Sheets
 🚀 Instalación
+Prerrequisitos
 Para conectarte a esta interfaz, necesitas:
 
-Oh My Posh: Sigue la guía de instalación oficial.
+Oh My Posh: El motor del prompt.
 
-Una Nerd Font: Esencial para que los glifos e iconos se rendericen correctamente. Recomiendo FiraCode Nerd Font.
+Una Nerd Font: Esencial para que los glifos e iconos (⚡, ♡, etc.) se rendericen correctamente. Recomiendo FiraCode Nerd Font.
 
-Pasos para instalar el tema:
+Pasos de Instalación
+Descarga el tema: Guarda el código del tema en un archivo llamado montys_neon.omp.json en una ubicación permanente (por ejemplo, en tu carpeta de usuario).
 
-Asegúrate de que tu archivo de tema se llame montys_neon.omp.json.
-
-Guárdalo en una ubicación permanente.
-
-Modifica el archivo de configuración de tu shell ($PROFILE en PowerShell) para que apunte a la ruta de tu tema.
+Configura tu Shell: Modifica el archivo de configuración de tu shell ($PROFILE en PowerShell, .zshrc en Zsh, etc.) para que apunte a la ruta de tu tema.
 
 PowerShell
 
-# Ejemplo para PowerShell
+PowerShell
+
 oh-my-posh init pwsh --config 'C:\ruta\a\tu\montys_neon.omp.json' | Invoke-Expression
-Reinicia la terminal. La conexión se habrá establecido.
+Bash
+
+Bash
+
+eval "$(oh-my-posh init bash --config '~/ruta/a/tu/montys_neon.omp.json')"
+Zsh
+
+Bash
+
+eval "$(oh-my-posh init zsh --config '~/ruta/a/tu/montys_neon.omp.json')"
+Recarga tu terminal: Cierra y vuelve a abrir tu terminal, o ejecuta source $PROFILE (PowerShell) / source ~/.zshrc (Zsh) para aplicar los cambios. La conexión se habrá establecido.
+
+🛠️ Personalización
+La belleza de este tema es su simplicidad. Si deseas cambiar un color o un icono, simplemente edita el archivo montys_neon.omp.json con cualquier editor de texto. Los valores son fáciles de encontrar y modificar.
 
 Cromo, código y neón.
