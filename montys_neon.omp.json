@@ -1,0 +1,212 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "console_title_template": "{{ .Shell }} - {{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "display_host": false
+          },
+          "template": " \uf0e7 {{ .UserName }} ",
+          "foreground": "#ffffff",
+          "background": "#f50742",
+          "type": "session",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "arch": "\uf303",
+            "debian": "\uf306",
+            "fedora": "\uf30a",
+            "linux": "\uf17c",
+            "macos": "\uf179",
+            "manjaro": "\uf312",
+            "opensuse": "\uf314",
+            "ubuntu": "\uf31b",
+            "windows": "\uf17a"
+          },
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "foreground": "#EFDCF9",
+          "background": "#0E050F",
+          "type": "os",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "folder_icon": "...",
+            "folder_separator_icon": "/",
+            "home_icon": "~",
+            "max_depth": 3,
+            "style": "agnoster_short"
+          },
+          "template": " {{ .Path }} ",
+          "foreground": "#EFDCF9",
+          "powerline_symbol": "\ue0b4",
+          "background": "#170B3B",
+          "type": "path",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "branch_template": "{{ trunc 25 .Branch }}",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "foreground": "#2b06e6",
+          "powerline_symbol": "\ue0b4",
+          "background": "#1e0366",
+          "type": "git",
+          "style": "powerline"
+        },
+        {
+          "template": " ☸ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b4",
+          "background": "#326CE5",
+          "type": "kubectl",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " {{ .FormattedMs }} ",
+          "foreground": "#EFDCF9",
+          "powerline_symbol": "\ue0b4",
+          "background": "#f50742",
+          "type": "executiontime",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf08a{{ if gt .Code 0 }} {{.Code}}{{ end }} ",
+          "foreground": "#EFDCF9",
+          "background": "#2d1aae",
+          "type": "status",
+          "style": "diamond",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#FF3C3C{{ end }}"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "fetch_version": false
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "\ue235{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "foreground": "#4af355",
+          "background": "#3d0cbb",
+          "type": "python",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "fetch_version": false
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "\ue718{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "foreground": "#42E66C",
+          "background": "#360369",
+          "type": "node",
+          "style": "diamond"
+        },
+        {
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf308 {{ .Context }} ",
+          "foreground": "#ffffff",
+          "background": "#0db7ed",
+          "type": "docker",
+          "style": "diamond"
+        },
+        {
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf1bc {{ .Icon }} {{ .Track.Artist }} - {{ .Track.Title }} ",
+          "foreground": "#FFFFFF",
+          "background": "#1DB954",
+          "type": "spotify",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "icons": [
+              "\uf244",
+              "\uf243",
+              "\uf242",
+              "\uf241",
+              "\uf240"
+            ]
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if .Charging }}\uf1e6 {{ end }}{{ .Icon }} {{ .Percentage }}% ",
+          "foreground": "#0E050F",
+          "type": "battery",
+          "style": "diamond",
+          "background_templates": [
+            "{{if .Error}}#FF3C3C{{end}}",
+            "{{if le .Percentage 20}}#FF3C3C{{end}}",
+            "{{if and (gt .Percentage 20) (lt .Percentage 60)}}#E4F34A{{end}}",
+            "{{if ge .Percentage 60}}#42E66C{{end}}"
+          ]
+        },
+        {
+          "properties": {
+            "location": "Puerto la Cruz, VE",
+            "units": "metric"
+          },
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{.Weather}} {{.Temperature}}{{.UnitIcon}} ",
+          "foreground": "#0E050F",
+          "background": "#FFB86C",
+          "type": "weather",
+          "style": "diamond"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "trailing_diamond": "\ue0b4 ",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "foreground": "#EFDCF9",
+          "background": "#220560",
+          "type": "time",
+          "style": "diamond"
+        },
+        {
+          "template": "❯ ",
+          "foreground": "#EFDCF9",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3,
+  "final_space": true
+}
