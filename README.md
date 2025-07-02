@@ -27,22 +27,6 @@ Este tema evita el caos visual. Se enfoca en lo esencial, con una identidad visu
 
 ---
 
-## 🤖 Estructura y Segmentos
-
-El prompt se organiza en **tres líneas limpias**, como una consola de datos en tiempo real:
-
-| Línea | Icono | Segmento | Descripción                                                   |
-| ----- | ----- | -------- | ------------------------------------------------------------- |
-| 1     | 셸     | Shell    | Muestra la versión actual de la shell (ej. PowerShell 7.5.2). |
-| 2     | ⚡     | Sesión   | Alerta visual (rojo neón) si estás en modo administrador.     |
-| 2     |      | Usuario  | Tu alias o nombre en red.                                     |
-| 2     |      | Ruta     | Muestra la ruta actual (`~` para home).                       |
-| 2     | ♡     | Estado   | Corazón púrpura si el último comando fue exitoso.             |
-| 3     |      | Hora     | Hora del sistema, para referencia constante.                  |
-| 3     | ❯     | Prompt   | Cursor minimalista. Espera tus órdenes.                       |
-
----
-
 ## 🎨 Paleta Cyberpunk Neón
 
 Una combinación de alto contraste para legibilidad perfecta y atmósfera visual poderosa:
